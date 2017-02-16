@@ -1,4 +1,4 @@
-#include "stdio.h"
+#include <stdio.h>
 
 void insert_sort(int array[], int count) {
   int i, j, key;
