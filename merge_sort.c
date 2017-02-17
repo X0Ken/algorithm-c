@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <malloc.h>
 
-void MergeList(int* pData, int start, int middle, int end){
+void merge_list(int* pData, int start, int middle, int end){
 
   int n1 = middle - start + 1;
   int n2 = end - middle;
@@ -37,20 +37,20 @@ void MergeList(int* pData, int start, int middle, int end){
   return;
 }
 
-void MergeSort(int* pData, int start, int end){
+void merge_sort(int* pData, int start, int end){
   if (end <= start) {
     return;
   }
   int middle = (end - start) / 2 + start;
-  MergeSort(pData, start, middle);
-  MergeSort(pData, middle + 1, end);
-  MergeList(pData, start, middle, end);
+  merge_sort(pData, start, middle);
+  merge_sort(pData, middle + 1, end);
+  merge_list(pData, start, middle, end);
   return;
 }
 
 int main(int argc, char const *argv[]) {
   int array[8] = {6, 3, 8, 4, 0, 3, 6, 9};
-  MergeSort(array, 0, 7);
+  merge_sort(array, 0, 7);
   for (int i = 0; i < 8; i++) {
     printf("%d\t", array[i]);
   }
