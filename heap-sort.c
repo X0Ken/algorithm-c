@@ -5,7 +5,7 @@ int parent(int i){
 }
 
 int left(int i){
-  return ++i * 2 - 1;
+  return i * 2 + 1;
 }
 
 int right(int i){
